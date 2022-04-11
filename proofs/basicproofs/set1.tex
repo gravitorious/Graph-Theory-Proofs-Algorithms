@@ -11,6 +11,10 @@
 \usepackage{mathrsfs}
 \usepackage{tikz-cd}
 \usepackage{hyperref, mathabx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 \newcommand{\boxitem}[2]{\vspace{.55cm}
 	\item[#1]
@@ -92,12 +96,61 @@
 	\boxitem{5.}{
 		Prove that for every simple graph G(V,E) with $n = |V|$ and $d(G)\geq\frac{n-1}{2}$ is connected.
 	}
-	\underline{Proof:} Suppose that G is not connected. Then G has at least two components. Each of these have at least one vertex with degree $\frac{n-1}{2}$. Now counting all the vertices of graph (including the two vertices) we see that $|V| = \frac{n-1}{2} + \frac{n-1}{2} + 1 + 1 = n+1$. A contradiction.
+	\underline{Proof:} Suppose that G is not connected. Then G has at least two components. Each of these have at least one vertex with degree $\frac{n-1}{2}$. Now counting all the vertices of graph (including the two vertices) we see that $|V| = \frac{n-1}{2} + \frac{n-1}{2} + 1 + 1 = n+1$. A contradiction. 
 	
+	\newpage
 	
+	\boxitem{6.}{
+		Give an efficient algorithm that takes as input a degree sequence and construct a simple graph from that sequence.  Run the algorithm with input $(5,4,3,3,2,2,1)$.
+	}
+	\underline{Proof:} For the algorithm we have used the fact that obtained from Havel-Hakimi theorem, that from a degree sequence, a $v_{i}$ vertex connects with the next $d_{i}$ vertices.\\
+	\begin{algorithm}
+		\caption{Construct graph from a degree sequence}
+		\label{alg:cap}
 		
-		
-		
+		\begin{algorithmic}
+			\Require A degree sequence $s = (d_{1}, d_{2},...,d_{k})$ with $d_{1} \geq d_{2} ... \geq d_{k}, k \geq 1$
+			\Ensure A graph $G(V,E)$ from sequence s
+			\State $vertices[ ] := $ List that contains the vertices  $v_{i}$ for each $s_{i}=d_{i}, 1 \leq i \leq k$
+			\State $e[] := empty$ \Comment{Contains pairs with edges}
+			\While{all elements from $s$ is non-zero}
+				\If{$s$ contains negative number}
+					\State print "Invalid degree sequence"
+					\State exit
+				\EndIf
+			
+				\State $i:=1$
+				\For{\texttt{$j:=1$ to $d_{i}$}}
+					\State e.push(create\_edge($vertices[i], vertices[i+j]$))
+					\State $s[i+j] = s[i+j] - 1$
+				\EndFor
+				\State $s[i] = 0$
+				\State $i:= i + 1$
+				\State sort(s, vertices, i) \Comment{Sort s with decreasing order from i to k and simultaneously the vertices list with the same order}
+			\EndWhile
+		\end{algorithmic}
+	\end{algorithm} 
+
+	The following figure shows what lists $s$ and $vertices$ contain on each loop for the input $(5,4,3,3,2,2,1)$.\\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.85\textwidth]{pic2}
+		\caption{vertices and s for input (5,4,3,3,2,2,1)}
+		\label{fig:mesh1}
+	\end{figure}\\
+	 
+	\newpage
+	\boxitem{7.}{
+		Prove that for every graph $G$, this graph or its complement $\tilde{G}$ is connected.
+	}
+	\underline{Proof:} Suppose that G is disconnected. Let two vertices $u,v \in V(G)$. Then these vertices will belong to the same component or not. If they belong to different components, then $u$ and $v$ will be adjacent in $\tilde{G}$, so there exists a path from $u$ to $v$. On the other hand, if $u$ and $v$ belong to the same component, then exists a path on $G$ from $u$ to $v$ that doesn't exist on $\tilde{G}$. But in this case, exists a vertex $w \in V(G)$ that belongs to a different component on G. So $w$ will be adjacent to $u$ and $v$ on $\tilde{G}$ so we can construct a path $(u,w,v)$. Therefore $\tilde{G}$ is connected.
+	
+	\newpage
+	\boxitem{8.}{
+		Show that for every graph G exists path with length $d(G)$.
+	}
+	\underline{Proof:} Let the path $(v_{1}, v_{2}, ..., v_{d})$ with length equals the diameter $d$, of graph G (maximum length). Then all the neighbors of $v_{d}$ lie on this path, because if they don't, then this path is not this with the maximum length (a contradiction). So, $d\geq d(v_{d}) \geq d(G)$. This completes the proof.
+	
 	
 		
 	\end{enumerate}
