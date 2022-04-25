@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.3.13)  11 APR 2022 16:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.3.13)  25 APR 2022 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1067,6 +1067,9 @@ File: l3backend-xetex.def 2020-01-29 L3 backend support: XeTeX
 
 LaTeX Warning: Label `fig:mesh1' multiply defined.
 
+
+LaTeX Warning: Label `alg:cap' multiply defined.
+
 )
 \openout1 = `set1.aux'.
 
@@ -1232,7 +1235,17 @@ Overfull \hbox (5.172pt too wide) in paragraph at lines 151--151
 | [] 
  []
 
-[5] (./set1.aux)
+
+Overfull \hbox (5.172pt too wide) in paragraph at lines 156--156
+| [] 
+ []
+
+[5]
+Overfull \hbox (5.172pt too wide) in paragraph at lines 168--168
+| [] 
+ []
+
+[6] (./set1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1240,12 +1253,12 @@ Package rerunfilecheck Info: File `set1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25316 strings out of 477220
- 480803 string characters out of 5832722
- 797650 words of memory out of 5000000
- 44569 multiletter control sequences out of 15000+600000
- 412102 words of font info for 62 fonts, out of 8000000 for 9000
+ 25335 strings out of 477220
+ 481211 string characters out of 5832722
+ 797936 words of memory out of 5000000
+ 44586 multiletter control sequences out of 15000+600000
+ 412110 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  87i,8n,89p,647b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on set1.pdf (5 pages).
+Output written on set1.pdf (6 pages).

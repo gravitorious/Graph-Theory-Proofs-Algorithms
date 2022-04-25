@@ -151,6 +151,55 @@
 	}
 	\underline{Proof:} Let the path $(v_{1}, v_{2}, ..., v_{d})$ with length equals the diameter $d$, of graph G (maximum length). Then all the neighbors of $v_{d}$ lie on this path, because if they don't, then this path is not this with the maximum length (a contradiction). So, $d\geq d(v_{d}) \geq d(G)$. This completes the proof.
 	
+	\boxitem{9.}{
+		Prove the correctness of DFS (Depth-first search) algorithm.
+	}
+	\underline{Proof (not rigorous):} To prove the correctness of DFS algorithm, we will prove the follow theorem.
+	\begin{theorem}
+		For every undirected or directed graph $G=(V,E)$ and for every starting vertex $s \in V$, at the conclusion of DFS, a vertex $v \in V$ is marked as explored if and only if there is a path from $s$ to $v$ in $G$.
+	\end{theorem}
+	If the vertex $v$ is marked as explored, it is obvious that DFS visited this vertex and so exists a path from $s$ to $v$ in $G$. \\
+	For the second part of proof, suppose that exists a path from $s$ to $v$ in $G$ ($s-v$) and let $n$ be the number of vertices in this path.
+	If $n=2$, then it is evident that at some point, the algorithm will mark $v$ as explored because $s$ and $v$ are neighbors, and dfs will run for all neighbors of $s$. Suppose that dfs mark as explored all vertices from path except $v$. This means that exists an edge $e$ that has startpoint a vertex $p$ that is marked as explored, and endpoint the vertex $v$ that is unexplored. But we know that DFS will run for all neighbors of $p$, and we are sure that at some point, all his neighbors will be marked as explored and so $v$.
+	\newpage
+	
+	\boxitem{10.}{
+		Describe an alternative version of DFS that on each vertex $v$ assigned a value $c(v)$ such that for every two vertices $v,u$, $c(v) = c(u)$ if and only if, $v,u$ belongs to the same component.
+	}    
+	\underline{Solution:} For the vertices that belong to the first component we give the value $1$, for the vertices that belong to the second component we give the value $2$, etc.
+
+	\begin{algorithm}
+		\caption{An alternative version of DFS}
+		\label{alg:cap}
+		\begin{algorithmic}
+			\Require A graph $G(V,E)$
+			\Ensure A distinct value for the vertices that belong to the same component. List c[].
+			\State n = |V|;
+			\State numCC = 0; \Comment{global variables}
+			\State visited[n] = \{false\};
+			\State c[n] = \{-1\};
+			\For{\texttt{$i:=1$ to $|V|$}} \Comment{For each vertex of graph}
+				\State if(visited[i] == true) continue;
+				\State numCC++;
+				\State c[i] = numCC;
+				\State dfs(i)
+			\EndFor
+			\\
+			\\
+			\Function{DFS}{x}
+				\If{visited[x] == true} 
+					\State \Return;
+				\EndIf
+				\State visited[x] = true;
+				\For{adj : graph[x]} \Comment{For all neighbors of vertex x}
+					\State c[adj] = numCC;
+					\State DFS(adj)
+				\EndFor
+			\EndFunction
+		\end{algorithmic}
+	\end{algorithm} 
+	
+	
 	
 		
 	\end{enumerate}
