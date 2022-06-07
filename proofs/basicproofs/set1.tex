@@ -198,9 +198,21 @@
 			\EndFunction
 		\end{algorithmic}
 	\end{algorithm} 
+	\newpage
+	\boxitem{11.}{
+		Prove that the Dijkstra algorithm cannot be used for graphs with negative edges.
+	} 
+	\underline{Proof:} We will give a counterexample.
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.55\textwidth]{pic3}
+			\caption{Counter example for Dijkstra algorithm}
+			\label{fig:mesh1}
+		\end{figure}\\
+		For the above graph it is easy to see that the shortest path from node 1 to node 4 is $1->3->4$. However, the Dijkstra's algorithm incorrectly finds the path 1 $1->2->4$ by greedily following the minimum weight edges (it will not use node 3 because $6 > 5$).
 	
 	
 	
-		
 	\end{enumerate}
 \end{document}
+

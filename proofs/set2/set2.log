@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.3.13)  25 APR 2022 21:18
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.3.13)  9 MAY 2022 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**set1.tex
-(./set1.tex
+**set2.tex
+(./set2.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-01-09> xparse <2020-03-03>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1063,18 +1063,8 @@ File: l3backend-xetex.def 2020-01-29 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count319
 \g__pdf_backend_annotation_int=\count320
 \g__pdf_backend_link_int=\count321
-) (./set1.aux
-
-LaTeX Warning: Label `fig:mesh1' multiply defined.
-
-
-LaTeX Warning: Label `alg:cap' multiply defined.
-
-
-LaTeX Warning: Label `fig:mesh1' multiply defined.
-
-)
-\openout1 = `set1.aux'.
+) (./set2.aux)
+\openout1 = `set2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -1087,7 +1077,8 @@ LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 0.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 50.
@@ -1152,9 +1143,9 @@ LaTeX Info: Redefining \ref on input line 50.
 LaTeX Info: Redefining \pageref on input line 50.
 LaTeX Info: Redefining \nameref on input line 50.
 
-(./set1.out) (./set1.out)
+(./set2.out) (./set2.out)
 \@outlinefile=\write4
-\openout4 = `set1.out'.
+\openout4 = `set2.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
@@ -1179,19 +1170,17 @@ Overfull \hbox (5.172pt too wide) in paragraph at lines 67--67
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
-
- []
-
-
-Overfull \hbox (5.172pt too wide) in paragraph at lines 75--75
+Overfull \hbox (5.172pt too wide) in paragraph at lines 72--72
 | [] 
  []
 
-File: pic1.png Graphic file (type bmp)
-<pic1.png>
 
-Overfull \hbox (5.172pt too wide) in paragraph at lines 88--88
+Overfull \hbox (5.172pt too wide) in paragraph at lines 77--77
+| [] 
+ []
+
+
+Overfull \hbox (5.172pt too wide) in paragraph at lines 84--84
 | [] 
  []
 
@@ -1202,73 +1191,38 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 [1
 
 ]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 93--93
+Overfull \hbox (5.172pt too wide) in paragraph at lines 92--92
+| [] 
+ []
+
+File: pic1.png Graphic file (type bmp)
+<pic1.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--100
+
+ []
+
+
+Overfull \hbox (5.172pt too wide) in paragraph at lines 103--103
 | [] 
  []
 
 
-Overfull \hbox (5.172pt too wide) in paragraph at lines 98--98
+Overfull \hbox (5.172pt too wide) in paragraph at lines 109--109
 | [] 
  []
 
-[2]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 105--105
-| [] 
- []
-
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 108.
-File: pic2.png Graphic file (type bmp)
-<pic2.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--141
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 145--145
-| [] 
- []
-
-[4]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 151--151
-| [] 
- []
-
-
-Overfull \hbox (5.172pt too wide) in paragraph at lines 156--156
-| [] 
- []
-
-[5]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 168--168
-| [] 
- []
-
-[6]
-Overfull \hbox (5.172pt too wide) in paragraph at lines 204--204
-| [] 
- []
-
-File: pic3.png Graphic file (type bmp)
-<pic3.png>
-[7] (./set1.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `set1.out' has not changed.
+[2] (./set2.aux)
+Package rerunfilecheck Info: File `set2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25351 strings out of 477220
- 481430 string characters out of 5832722
- 798077 words of memory out of 5000000
- 44602 multiletter control sequences out of 15000+600000
- 412110 words of font info for 63 fonts, out of 8000000 for 9000
+ 25266 strings out of 477220
+ 480020 string characters out of 5832722
+ 800462 words of memory out of 5000000
+ 44523 multiletter control sequences out of 15000+600000
+ 412086 words of font info for 60 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,8n,89p,647b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,8n,89p,552b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on set1.pdf (7 pages).
+Output written on set2.pdf (2 pages).
